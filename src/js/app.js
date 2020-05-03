@@ -1,6 +1,17 @@
 // TODO: write your code here
 import sum from './basic';
 
-console.log('worked');
+export default function Character(name, type) {
+  this.name = name;
+  this.type = type;
+  this.health = 100;
+  this.attack = 10;
+  this.defence = 40;
+}
 
-console.log(sum([1, 2]));
+Character.prototype = {
+damage:function (points) {
+        if (this.health >= 0) {
+            this.health -= points * (1 - this.defence / 100);
+        }
+}};
